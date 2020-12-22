@@ -1,0 +1,62 @@
+.content {}
+
+.welcome {
+  width: 400px;
+  margin: 0 auto;
+  align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 15px;
+}
+
+#chuck {
+  margin-top: 50px;
+}
+
+#chuck img {
+  width: 80px;
+  margin-top: 20px;
+}
+
+#chuck p {
+  width: 70%;
+  float: right;
+}
+
+.funnyText {
+  font-family: Pangolin, cursive;
+}
+
+.center {
+  text-align: center;
+}
+
+.list {
+  text-align: left;
+}
+
+.header {
+  font-family: "Times New Roman", Times, serif;
+  font-size: medium;
+}
+.mainbody {
+	font-family: "Times New Roman", Times, serif;
+  	font-size: medium;
+	margin-top: 5px;
+}
+
+.wide{
+  width:500px;
+}
+
+.centerelement{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+<mat-card>
+	<div class="welcome center">
+		<h1>Welcome to MyTasks</h1>
+		<p>Manage your personal tasks</p>
+		Descripcion:  <input type="text" id="newtaskdesc">
+
+		<div class="button-row">
+		</div>
+		<div class="list">
+		
+			<ul id="tabla">
+			<li>
+				<button mat-raised-button color="primary" (click)="newTask()" class="centerelement">
+					<mat-icon>add</mat-icon>
+					Create a new one
+				</button>
+			</li>
+				<li *ngFor="let task of tasks" id="task{{task.id}}" class="wide">
+				
+					
+						<div class="header"> {{ "Task ID: " + task.id}} </div>
+
+						<mat-form-field appearance="fill"> 
+						<mat-label class = "small-font">Task status</mat-label>
+						<mat-select [(value)]= "task.task_state" (selectionChange)="changeStatus(task.task_state,task.id,task.description)">
+							<mat-option value="In Progress">In Progress</mat-option>
+							<mat-option value="Pending">Pending</mat-option>
+							<mat-option value="Finished">Finished</mat-option>
+						</mat-select>
+						</mat-form-field>
+						
+						
+       					{{task.description}}
+	
+					
+						<button mat-raised-button (click)="deleteTask(task.id)">
+							<mat-icon>delete</mat-icon>
+						</button>
+					
+
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</mat-card>
