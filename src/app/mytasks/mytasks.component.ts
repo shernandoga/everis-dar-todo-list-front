@@ -10,7 +10,6 @@ import { TasksControllerService } from '../Services/api/tasksController.service'
 export class MytasksComponent implements OnInit {
   public tasks: Tasks[];
   public selected = "In Progress";
-  public nuevaTask;
 
   constructor(private service: TasksControllerService) { }
 
@@ -20,12 +19,6 @@ export class MytasksComponent implements OnInit {
       console.log(val);
       this.tasks = val;
     });
-    if(this.nuevaTask != null){
-      this.tasks.push(this.nuevaTask);
-      console.log(this.nuevaTask);
-    }
-    console.log("init");
-    console.log(this.tasks);
   }
 
   deleteTask(taskID: string) {
@@ -48,10 +41,6 @@ export class MytasksComponent implements OnInit {
     console.log("Añadir nueva task");
     var response = this.service.saveTasks({task_state: 'In Progress', description: description });
     console.log(response.subscribe(val => console.log(val)));
-    this.nuevaTask = {"id":10,"task_state":"In Progress","description":"prueba descipcion"};
-    setTimeout(() => {
-    window.location.reload();
-  }, 10);
 
   }
 
